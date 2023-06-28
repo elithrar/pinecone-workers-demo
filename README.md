@@ -4,10 +4,10 @@
 
 Query (and create!) vectors in [Pinecone](https://www.pinecone.io/) from [Cloudflare Workers](https://workers.dev/).
 
-## Requirements
+## Deploying the Demo
 
-1. Clone this repository: `git clone ...`
-2. Install the dependencies: `npm install`
+1. Clone this repository: `git clone https://github.com/elithrar/pinecone-workers-demo.git`
+2. Change into the directory (`cd pinecone-workers-demo`) and install the dependencies: `npm install`
 3. Get a Pinecone [API key](https://docs.pinecone.io/docs/security#api-keys)
 4. Set that key as a wrangler secret: `wrangler secret put PINECONE_API_KEY` (follow the prompts)
 5. Deploy the demo app to your Cloudflare account: `wrangler deploy` and note the URL returned - e.g. `https://pinecone-demo.YOUR_SUBDOMAIN.workers.dev`
@@ -34,9 +34,10 @@ If you want to learn more, visit Pinecone's [documentation](https://docs.pinecon
 
 This is only a basic example of how to wire up Pinecone + Workers, but you could:
 
-* Use the [Cache API]() to cache common queries and return them from cache (vs. querying your Pinecone index each time)
+* Use the [Cache API](https://developers.cloudflare.com/workers/runtime-apis/cache/) to cache common queries and return them from cache (vs. querying your Pinecone index each time)
 * Tie in authentication using Hono's middleware: https://hono.dev/middleware/builtin/bearer-auth
 * Handle errors more politely when an index is still being created (!)
+* Accept dynamic queries via the `/query` endpoint vs. just a static query
 
 ## Built with
 
