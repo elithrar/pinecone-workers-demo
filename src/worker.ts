@@ -104,6 +104,11 @@ export default {
 			return c.json(queryResponse);
 		});
 
+		// Show available routes
+		app.get("/", async (c) => {
+			return c.json(app.routes)
+		})
+
 		return app.fetch(request, env, ctx);
 	},
 };
