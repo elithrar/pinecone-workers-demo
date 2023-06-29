@@ -7,3 +7,8 @@ compatibility_date = "2023-06-28"
 # Docs: https://developers.cloudflare.com/workers/platform/environment-variables
 [vars]
 PINECONE_ENVIRONMENT = "us-west1-gcp-free"
+
+# Enable Smart Placement to improve query performance
+# Docs: https://developers.cloudflare.com/workers/platform/smart-placement/
+[placement]
+mode = "smart"
